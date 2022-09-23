@@ -7,41 +7,22 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
+            Console.SetBufferSize(120, 40);
 
-            Point p1 = new Point(1,3,'*');
-            p1.Draw();
+            //Отрисовка рамочка
+            Horizontalline uphline = new Horizontalline(0, 78, 0, '+');
+            Horizontalline downhline = new Horizontalline(0, 78, 25, '+');
+            Verticalline leftvline = new Verticalline(0,25,0,'+');
+            Verticalline rightvline = new Verticalline(0,25,78,'+');
+            uphline.Drow();
+            downhline.Drow();
+            leftvline.Drow();
+            rightvline.Drow();
 
-            Point p2 = new Point(4, 5, '#');
-            p2.Draw();
-
-            Point p3 = new Point(3, 2, '?');
-            p3.Draw();
-
-            Point p4 = new Point(0, 8, '@');
-            p4.Draw();
-
-            List<char> numlist = new List<char>();
-            numlist.Add('#');
-            numlist.Add('*');
-            numlist.Add('!');
-
-            char x = numlist[0];
-            char y = numlist[1];
-            char z = numlist[2];
-            
-
-            foreach (char i in numlist)
-            {
-                Console.WriteLine(i);
-            }
-
-            numlist.RemoveAt(0);
-
-            List<Point> plist = new List<Point>();
-            plist.Add(p1);
-            plist.Add(p2);
-            plist.Add(p3);
-            plist.Add(p4);
+            //Отрисовка точек
+           
+            Point p = new Point(4, 5, '*');
+            p.Draw();
 
             Console.ReadLine();
         }
