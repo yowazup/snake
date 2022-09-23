@@ -7,9 +7,9 @@ namespace MyApp // Note: actual namespace depends on the project name.
     {
         static void Main(string[] args)
         {
-            Console.SetBufferSize(120, 40);
+            //Console.SetBufferSize(120, 40);
 
-            //Отрисовка рамочка
+            //Отрисовка рамочки
             Horizontalline uphline = new Horizontalline(0, 78, 0, '+');
             Horizontalline downhline = new Horizontalline(0, 78, 25, '+');
             Verticalline leftvline = new Verticalline(0,25,0,'+');
@@ -19,10 +19,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
             leftvline.Drow();
             rightvline.Drow();
 
-            //Отрисовка точек
-           
+            //Отрисовка змейки
             Point p = new Point(4, 5, '*');
-            p.Draw();
+            Snakes snake = new Snakes(p, 4, Direction.RIGHT);
+            snake.Drow();
 
             Console.ReadLine();
         }
