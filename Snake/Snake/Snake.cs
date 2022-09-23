@@ -9,7 +9,7 @@ namespace Snake
     internal class Snakes : Figure
     {
        
-        Direction direction;
+        public Direction direction;
         public Snakes(Point tail, int lenght, Direction _direction)
         {
 
@@ -43,5 +43,21 @@ namespace Snake
         
         }
     
+
+        public void Turns (ConsoleKey key)
+        {
+            if (key == ConsoleKey.LeftArrow)
+                direction = Direction.LEFT;
+            else if (key == ConsoleKey.RightArrow)
+                direction = Direction.RIGHT;
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
+
+        }
+                    
+
+
     }
 }
