@@ -18,9 +18,11 @@ namespace MyApp // Note: actual namespace depends on the project name.
             Snakes snake = new Snakes(p, 4, Direction.RIGHT);
             snake.Draw();
 
+            //Отрисовка еды
             FoodCreator foodCreator = new FoodCreator(80, 26, '$');
             Point food = foodCreator.CreateFood();
             food.Draw();
+
 
             while (true)
             {
@@ -46,6 +48,10 @@ namespace MyApp // Note: actual namespace depends on the project name.
                     snake.Turns(key.Key);
                 }
             }
+            Endgame GAME = new Endgame (30,3,'#');
+            GAME.Draw();
+
+            Console.ReadLine();
         }
     }
 }
